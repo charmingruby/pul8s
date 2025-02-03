@@ -1,20 +1,27 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi-aws/sdk/v6/go/aws/s3"
+	"github.com/pulumi/pulumi-awsx/sdk/go/awsx/ec2"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
-		// Create an AWS resource (S3 Bucket)
-		bucket, err := s3.NewBucketV2(ctx, "my-bucket", nil)
+		azCount := 2
+
+		vpc, err := ec2.NewVpc(ctx, "pul8s", &ec2.VpcArgs{
+			NumberOfAvailabilityZones: &azCount,
+			Tags: pulumi.StringMap{
+				"Name":      pulumi.String("pul8s-vpc"),
+				"ManagedBy": pulumi.String("Pulumi"),
+			},
+		})
 		if err != nil {
 			return err
 		}
 
-		// Export the name of the bucket
-		ctx.Export("bucketName", bucket.ID())
+		ctx.Export("vpcId", vpc.VpcId)
+
 		return nil
 	})
 }

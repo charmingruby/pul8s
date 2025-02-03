@@ -5,12 +5,13 @@ go 1.21
 toolchain go1.23.2
 
 require (
-	github.com/pulumi/pulumi-aws/sdk/v6 v6.37.1
+	github.com/pulumi/pulumi-awsx/sdk v1.0.6
 	github.com/pulumi/pulumi/sdk/v3 v3.117.0
 )
 
 require (
 	dario.cat/mergo v1.0.0 // indirect
+	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/ProtonMail/go-crypto v1.0.0 // indirect
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
@@ -60,6 +61,8 @@ require (
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 // indirect
 	github.com/pulumi/esc v0.6.2 // indirect
+	github.com/pulumi/pulumi-aws/sdk/v5 v5.35.0 // indirect
+	github.com/pulumi/pulumi-docker/sdk/v3 v3.2.0 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/sabhiram/go-gitignore v0.0.0-20210923224102-525f6e181f06 // indirect
