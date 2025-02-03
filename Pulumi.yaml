@@ -1,0 +1,7 @@
+name: pul8s
+description: A minimal Kubernetes cluster on AWS
+runtime: go
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-go
