@@ -1,3 +1,3 @@
-import * as compute from './modules/compute/vpc'
+import * as compute from './modules/network/vpc'
 
-const vpc = compute.NewVpc(2)
+const vpc = compute.vpc(2)

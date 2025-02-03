@@ -1,13 +1,12 @@
 import * as awsx from "@pulumi/awsx";
 
-export const PROJECT_NAME = "pul8s"
-const MANAGED_BY = "pulumi"
+import { MANAGED_BY, PROJECT_NAME } from './constants'
 
 interface ResourceTagsOutput {
     [key: string]: string
 }
 
-export function NewResourceTags(resourceName: string): ResourceTagsOutput {
+export const resourceTagging = (resourceName: string): ResourceTagsOutput => {
     return {
         Name: resourceName,
         ManagedBy: MANAGED_BY,
