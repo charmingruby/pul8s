@@ -1,7 +1,10 @@
 name: pul8s
-description: A minimal Kubernetes cluster on AWS
-runtime: go
+description: Sample EKS cluster
+runtime:
+  name: nodejs
+  options:
+    packagemanager: pnpm
 config:
   pulumi:tags:
     value:
-      pulumi:template: aws-go
+      pulumi:template: aws-typescript
