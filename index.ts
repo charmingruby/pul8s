@@ -10,14 +10,14 @@ export const clusterEndpoint = cluster.core.endpoint
 export const kubeconfig = cluster.kubeconfig
 
 const deployment = compute.kubernetesManifests.deployment({
-    appName: "poddumy",
-    image: "charmingruby/poddumy:latest",
+    appName: "podummy",
+    image: "charmingruby/podummy:latest",
     containerPort: 8080,
     clusterProvider: cluster.provider
 })
 
 const service = compute.kubernetesManifests.service({
-    appName: "poddumy",
+    appName: "podummy",
     containerPort: 8080,
     clusterProvider: cluster.provider
 })

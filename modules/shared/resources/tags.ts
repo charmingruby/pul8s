@@ -11,6 +11,6 @@ export const resourceTagging = (resourceName: string): ResourceTagsOutput => {
         Name: resourceName,
         ManagedBy: MANAGED_BY,
         ProjectName: PROJECT_NAME,
-        CreatedAt: new Date().toISOString()
+        CreatedAt: "04/02/2045"
     }
 }

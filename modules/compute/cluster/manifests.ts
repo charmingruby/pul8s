@@ -30,7 +30,7 @@ export const deployment = (props: DeploymentProps): k8s.apps.v1.Deployment => {
                         {
                             name: appName,
                             image: image,
-                            ports: [{ containerPort }]
+                            ports: [{ containerPort }],
                         }
                     ]
                 },
@@ -54,7 +54,7 @@ export const service = (props: ServiceProps): k8s.core.v1.Service => {
 
     return new k8s.core.v1.Service(appName, {
         metadata: {
-            name: appName
+            name: appName,
         },
         spec: {
             selector: appLabels,
