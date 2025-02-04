@@ -3,7 +3,7 @@ import * as awsx from '@pulumi/awsx';
 
 import * as resources from '../../shared/resources';
 
-const eks = (vpc: awsx.ec2.Vpc): Cluster => {
+export const eks = (vpc: awsx.ec2.Vpc): Cluster => {
     const { vpcId, publicSubnetIds } = vpc
 
     return new Cluster(resources.naming("eks"), {
@@ -12,6 +12,9 @@ const eks = (vpc: awsx.ec2.Vpc): Cluster => {
         desiredCapacity: 2,
         minSize: 2,
         maxSize: 2,
+        storageClasses: "gp2",
+        instanceType: "t2.micro",
         tags: resources.tagging("eks"),
     })
 }
+
